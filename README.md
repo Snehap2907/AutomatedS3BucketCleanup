@@ -13,6 +13,7 @@ S3 Bucket  <---list/delete--->  Lambda Function (Python 3.12+, boto3)
                                + CloudWatch Logs)
 ```
 
+
 ## Files in this repo
 
 | File | Purpose |
@@ -38,6 +39,11 @@ Since S3 doesn't allow backdating `LastModified`, testing was done by temporaril
 lowering the age threshold to **minutes** instead of faking old files — see
 `AGE_THRESHOLD_MINUTES` in the code and the Testing section below.
 
+<img width="940" height="360" alt="image" src="https://github.com/user-attachments/assets/ce438a9d-9593-418c-bd54-12b0ace34e55" />
+
+<img width="940" height="290" alt="image" src="https://github.com/user-attachments/assets/ca51a921-6dec-42c6-90b0-e5521ae7b64a" />
+
+
 ---
 
 ## Step 2 — IAM Role
@@ -50,6 +56,11 @@ Created a dedicated execution role (`s3-cleanup-lambda-role`) with:
 ![IAM role showing both attached policies](screenshots/03-iam-role-policies.png)
 
 ![IAM role after correcting the inline policy](screenshots/06-iam-role-updated.png)
+
+
+<img width="940" height="263" alt="image" src="https://github.com/user-attachments/assets/d30fa610-46f8-4ed5-b17f-a74b8c598f5f" />
+
+
 
 ---
 
@@ -70,6 +81,9 @@ Python 3.12+, boto3. Key implementation details:
 Environment variables used to control behavior without redeploying code:
 
 ![Environment variables: AGE_THRESHOLD_DAYS, AGE_THRESHOLD_MINUTES, BUCKET_NAME](screenshots/02-env-vars-set.png)
+
+
+<img width="1521" height="492" alt="image" src="https://github.com/user-attachments/assets/55527e1b-61e4-4767-afc4-0df38c600627" />
 
 ---
 
